@@ -1,0 +1,17 @@
+# Visual Studio Cache
+.vs/*
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Project Files for Windows
+*.sln
+*.vcxproj.*
+*/Generated/*
+
+# Private config files
+**.pconfig**
+
+# Project config files
+ProjectConfig.ini
