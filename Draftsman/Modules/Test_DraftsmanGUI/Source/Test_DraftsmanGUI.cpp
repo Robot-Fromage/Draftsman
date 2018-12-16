@@ -1,6 +1,8 @@
 #include "Test_DraftsmanGUI.hpp"
+
 #include "DraftsmanCore/DraftsmanCore.hpp"
 #include "DraftsmanGUI/DraftsmanGUI.hpp"
+
 #include "tinyxml2.h"
 
 #include <QApplication>
