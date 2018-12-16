@@ -44,7 +44,10 @@ set (CMAKE_AUTOMOC ON)
 # Add projects
 include(${CMAKE_CURRENT_SOURCE_DIR}/DraftsmanCore/CMakeLists.txt) # Depends on tinyxml
 include(${CMAKE_CURRENT_SOURCE_DIR}/DraftsmanGUI/CMakeLists.txt) # Depends on DraftsmanCore
-include(${CMAKE_CURRENT_SOURCE_DIR}/Test_DraftsmanCore/CMakeLists.txt) # Depends on DraftsmanCore
-include(${CMAKE_CURRENT_SOURCE_DIR}/Test_DraftsmanGUI/CMakeLists.txt) # Depends on DraftsmanGUI
+
+if( ${DRAFTSMAN_BUILD_TESTS} )
+    include(${CMAKE_CURRENT_SOURCE_DIR}/Test_DraftsmanCore/CMakeLists.txt) # Depends on DraftsmanCore
+    include(${CMAKE_CURRENT_SOURCE_DIR}/Test_DraftsmanGUI/CMakeLists.txt) # Depends on DraftsmanGUI
+endif()
 
 set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT DraftsmanCore )
