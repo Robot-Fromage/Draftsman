@@ -3,7 +3,7 @@
  *   DraftsmanCore
  *__________________
  *
- * @file DraftsmanCore.Node.h
+ * @file DraftsmanCore.Node.hpp
  * @author Clement BERTHAUD <code@clementberthaud.com>
  * @date 16/12/2018
  * @brief Definition of DraftsmanCore Node class
@@ -25,7 +25,7 @@ class Node
 
 public:
     // Construction / Destruction
-    ~Node();
+    virtual  ~Node() = 0;
     Node();
 
 public:

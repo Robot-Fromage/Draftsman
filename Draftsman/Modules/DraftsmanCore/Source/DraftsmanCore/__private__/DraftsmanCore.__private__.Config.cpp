@@ -10,7 +10,7 @@
  * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
  */
 
-#include "DraftsmanCore.__private__.Config.h"
+#include "DraftsmanCore.__private__.Config.hpp"
 
 
 #define  DEFAULT_CONFIG_RESOURCE_PATH   "resources/"

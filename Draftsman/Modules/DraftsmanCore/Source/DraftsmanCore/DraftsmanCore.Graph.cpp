@@ -10,7 +10,7 @@
  * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
  */
 
-#include "DraftsmanCore/DraftsmanCore.Graph.h"
+#include "DraftsmanCore/DraftsmanCore.Graph.hpp"
 
 
 namespace DraftsmanCore {

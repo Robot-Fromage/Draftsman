@@ -3,7 +3,7 @@
  *   DraftsmanCore
  *__________________
  *
- * @file DraftsmanCore.Config.h
+ * @file DraftsmanCore.Config.hpp
  * @author Clement BERTHAUD <code@clementberthaud.com>
  * @date 16/12/2018
  * @brief Definition of DraftsmanCore Config module

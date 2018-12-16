@@ -10,11 +10,11 @@
  * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
  */
 
-#include "DraftsmanCore/DraftsmanCore.Config.h"
+#include "DraftsmanCore/DraftsmanCore.Config.hpp"
 
 
-#include "DraftsmanCore.__private__.Config.h"
-#include "DraftsmanCore.__private__.GenerateUUID.h"
+#include "DraftsmanCore.__private__.Config.hpp"
+#include "DraftsmanCore.__private__.GenerateUUID.hpp"
 
 
 namespace  DraftsmanCore {

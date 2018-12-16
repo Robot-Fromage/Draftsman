@@ -3,7 +3,7 @@
  *   DraftsmanCore
  *__________________
  *
- * @file DraftsmanCore.__private__.GenerateUUID.h
+ * @file DraftsmanCore.__private__.GenerateUUID.hpp
  * @author Clement BERTHAUD <code@clementberthaud.com>
  * @date 16/12/2018
  * @brief Definition of DraftsmanCore GenerateUUID private module

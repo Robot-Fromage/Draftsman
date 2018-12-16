@@ -3,7 +3,7 @@
  *   DraftsmanCore
  *__________________
  *
- * @file DraftsmanCore.Graph.h
+ * @file DraftsmanCore.Graph.hpp
  * @author Clement BERTHAUD <code@clementberthaud.com>
  * @date 16/12/2018
  * @brief Definition of DraftsmanCore Graph class

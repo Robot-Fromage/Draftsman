@@ -10,10 +10,10 @@
  * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
  */
 
-#include "DraftsmanCore/DraftsmanCore.Node.h"
+#include "DraftsmanCore/DraftsmanCore.Node.hpp"
 
 
-#include "DraftsmanCore.__private__.GenerateUUID.h"
+#include "DraftsmanCore.__private__.GenerateUUID.hpp"
 
 
 #define  DEFAULT_NODE_NAME      "<Untitled_Node>"
