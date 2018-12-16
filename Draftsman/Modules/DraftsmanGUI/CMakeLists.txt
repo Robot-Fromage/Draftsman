@@ -11,24 +11,7 @@ file(
 
 add_library( DraftsmanGUI ${source_list} )
 
-#IF( ${DC_TINYXML2_BUILD_SHARED} EQUAL "OFF" )
-#    target_link_libraries (
-#        DraftsmanCore
-#        debug ${DC_TINYXML2_DEBUG_BIN_PATH}tinyxml2d.dll
-#        optimized ${DC_TINYXML2_RELEASE_BIN_PATH}tinyxml2.dll
-#    )
-#    target_link_libraries (
-#        DraftsmanCore
-#        debug ${DC_TINYXML2_DEBUG_LIB_PATH}tinyxml2d.lib
-#        optimized ${DC_TINYXML2_RELEASE_LIB_PATH}tinyxml2.lib
-#    )
-#ELSE()
-#    target_link_libraries (
-#        DraftsmanCore
-#        debug ${DC_TINYXML2_DEBUG_LIB_PATH}tinyxml2d.lib
-#        optimized ${DC_TINYXML2_RELEASE_LIB_PATH}tinyxml2.lib
-#    )
-#ENDIF()
+target_link_libraries( DraftsmanGUI DraftsmanCore )
 
 target_include_directories(
     DraftsmanGUI
