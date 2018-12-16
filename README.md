@@ -3,26 +3,41 @@
 
 Core Implementation for Draftsman Modular Nodal Pipeline C++ Library.
 
-###### Relies on:
+###### Dependencies:
+        - Qt5.10 or greater
         - tinyxml2
+
+###### Links:
+https://www.qt.io/  \
+https://github.com/leethomason/tinyxml2
 
 ## Requirements
 
-### All:
+#### All:
 ###### Hardware:
         - 64bit machine
+        - Modern Graphics Card with support for OpenGL3 features
+        - At least 8GB RAM
 
-#### Windows:
 ###### Software:
-        - Windows 7, 8, 10 and greater
-        - CMake 3.11 and greater
+        - CMake 3.11.4 and greater
         - Git 2.17.0 and greater
-        - Visual Studio Studio 15 2017 and greater
+        - A Python 3.7 or greater install available from PATH as "python3"
 
 ###### Links:
 https://cmake.org/download/  \
 https://git-scm.com/download/win  \
-https://visualstudio.microsoft.com/fr/downloads/
+https://www.python.org/
+
+#### Windows:
+###### Software:
+        - Windows 7, 8, 10 and greater
+        - Visual Studio Studio 15 2017 and greater
+        - Qt Visual Studio Tools Extension
+
+###### Links:
+https://visualstudio.microsoft.com/fr/downloads/  \
+https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioTools-19123
 
 ## Setup instructions:
 
