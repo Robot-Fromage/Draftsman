@@ -11,6 +11,7 @@ SET( DRAFTSMAN_TINYXML2_INCLUDE_PATH        "unset"     CACHE STRING    "Indicat
 SET( DRAFTSMAN_BUILD_SHARED_CORE            OFF         CACHE BOOL      "Sets if we build the library shared or static" )
 SET( DRAFTSMAN_BUILD_SHARED_GUI             OFF         CACHE BOOL      "Sets if we build the library shared or static" )
 SET( DRAFTSMAN_BUILD_TESTS                  ON          CACHE BOOL      "Sets if we build the library shared or static" )
+SET( DRAFTSMAN_QT_CMAKE_PATH                "unset"     CACHE STRING    "Indicates the path to Qt cmake package" )
 
 # Generate only Debug and Release configurations for all projects
 set( CMAKE_CONFIGURATION_TYPES Debug Release CACHE TYPE INTERNAL FORCE )
@@ -36,6 +37,9 @@ if( ${DRAFTSMAN_USE_CONFIG} )
         include(${CMAKE_CURRENT_SOURCE_DIR}/../../ProjectConfigOverrides.cmake)
     endif()
 endif()
+
+set (CMAKE_PREFIX_PATH ${DRAFTSMAN_QT_CMAKE_PATH})
+set (CMAKE_AUTOMOC ON)
 
 # Add projects
 include(${CMAKE_CURRENT_SOURCE_DIR}/DraftsmanCore/CMakeLists.txt) # Depends on tinyxml

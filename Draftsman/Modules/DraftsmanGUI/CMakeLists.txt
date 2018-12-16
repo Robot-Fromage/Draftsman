@@ -13,6 +13,21 @@ add_library( DraftsmanGUI ${source_list} )
 
 target_link_libraries( DraftsmanGUI DraftsmanCore )
 
+find_package(
+    Qt5
+    REQUIRED COMPONENTS
+    Core
+    Widgets
+    Gui
+)
+
+target_link_libraries(
+    DraftsmanGUI
+    Qt5::Core
+    Qt5::Widgets
+    Qt5::Gui
+)
+
 target_include_directories(
     DraftsmanGUI
     PUBLIC
