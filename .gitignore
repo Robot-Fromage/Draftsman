@@ -8,10 +8,15 @@ __pycache__/
 # Project Files for Windows
 *.sln
 *.vcxproj.*
+
+# Generated
 */Generated/*
+
+# Content
+*/Content/*
 
 # Private config files
 **.pconfig**
 
 # Project config files
-ProjectConfig.ini
+ProjectConfigOverrides.cmake

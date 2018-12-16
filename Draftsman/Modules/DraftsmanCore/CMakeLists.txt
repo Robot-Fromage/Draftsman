@@ -34,7 +34,7 @@ target_include_directories(
     DraftsmanCore
     PUBLIC
     "DraftsmanCore/Include/"
-    ${DC_TINYXML2_INCLUDE_PATH}
+    ${DRAFTSMAN_TINYXML2_INCLUDE_PATH}
     PRIVATE
     "DraftsmanCore/Source/DraftsmanCore/"
 )

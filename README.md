@@ -30,5 +30,31 @@ https://visualstudio.microsoft.com/fr/downloads/
 ###### Setup:
         - call Setup.bat
 
+###### Configuration:
+You will see a ProjectConfigOverrides.cmake file appearing at the root of the repository.
+        -SET( DRAFTSMAN_TINYXML2_USE_SHARED          OFF )
+        -SET( DRAFTSMAN_TINYXML2_DEBUG_BIN_PATH      "default" )
+        -SET( DRAFTSMAN_TINYXML2_RELEASE_BIN_PATH    "default" )
+        -SET( DRAFTSMAN_TINYXML2_DEBUG_LIB_PATH      "default" )
+        -SET( DRAFTSMAN_TINYXML2_RELEASE_LIB_PATH    "default" )
+        -SET( DRAFTSMAN_TINYXML2_INCLUDE_PATH        "default" )
+        -SET( DRAFTSMAN_BUILD_SHARED_CORE            OFF )
+        -SET( DRAFTSMAN_BUILD_SHARED_GUI             OFF )
+        -SET( DRAFTSMAN_BUILD_TESTS                  ON )
+Override those values for your need, specifying where to find tinyxml2 and the build options.
+The paths should be ABSOLUTE paths and point to the needed tinyxml directories.
+See "Cloning and Building tinyxml2" for a little bit of help on that part.
+
 ###### Generate Visual Studio Solution:
         - call GenerateProjectFiles.bat
+GenerateProjectFiles.bat should be called each time you add or remove a file, or add a dependency, or change the paths to you tinyxml2 installation.
+
+## Cloning and Building tinyxml2
+Here is a little script sample you can use to quickly clone and build
+    -git clone https://github.com/leethomason/tinyxml2
+    -mkdir build_tinyxml
+    -cd build_tinyxml
+    -cmake -G "Visual Studio 15 2017 Win64" -DBUILD_SHARED_LIBS=OFF ../tinyxml2
+    -cmake --build . --config Release
+    -cmake --build . --config Debug
+Once it's done, you should copy the relevant paths in your PRojectConfigOverrides.cmake file.

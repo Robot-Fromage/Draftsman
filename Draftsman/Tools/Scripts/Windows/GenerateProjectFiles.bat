@@ -21,7 +21,7 @@ del cmake_install.cmake
 del CMakeCache.txt
 
 :: Rebuild Project
-cmake ../Modules
+cmake -DDRAFTSMAN_USE_CONFIG:BOOL=ON ../Modules
 
 :: Create symbolic link to solution in root
 cd ../../
