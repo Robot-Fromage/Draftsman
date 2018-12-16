@@ -22,8 +22,8 @@ set( CMAKE_SUPPRESS_REGENERATION true )
 # Set Debug postfix for all projects
 set( CMAKE_DEBUG_POSTFIX d )
 # Set Runtime Library for all projects
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
+#set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+#set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
 
 # Create global solution
 project( Draftsman CXX )
