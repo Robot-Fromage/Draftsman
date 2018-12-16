@@ -40,6 +40,7 @@ target_include_directories(
     ${DRAFTSMAN_TINYXML2_INCLUDE_PATH}
     PRIVATE
     "DraftsmanCore/Source/DraftsmanCore/"
+    "DraftsmanCore/Source/DraftsmanCore/__private__/"
 )
 
 # For MSVC parse pretty filter names
