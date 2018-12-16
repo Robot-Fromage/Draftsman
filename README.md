@@ -6,24 +6,27 @@ Core Implementation for Draftsman Modular Nodal Pipeline C++ Library.
 ###### Relies on:
         - tinyxml2
 
-## Requirements for Windows:
+## Requirements
 
+### All:
 ###### Hardware:
         - 64bit machine
 
+#### Windows:
 ###### Software:
-        - Windows 7, 8, 10
-        - CMake 3.0 or greater
-        - Git
-        - Visual Studio ( Tested for Visual Studio 15 2017 )
+        - Windows 7, 8, 10 and greater
+        - CMake 3.11 and greater
+        - Git 2.17.0 and greater
+        - Visual Studio Studio 15 2017 and greater
 
 ###### Links:
 https://cmake.org/download/  \
 https://git-scm.com/download/win  \
 https://visualstudio.microsoft.com/fr/downloads/
 
-## Setup instructions for Windows:
+## Setup instructions:
 
+####Windows:
 ###### Clone:
         - git clone https://github.com/Robot-Fromage/DraftsmanCore
 
@@ -32,6 +35,7 @@ https://visualstudio.microsoft.com/fr/downloads/
 
 ###### Configuration:
 You will see a ProjectConfigOverrides.cmake file appearing at the root of the repository.
+
         - SET( DRAFTSMAN_TINYXML2_USE_SHARED          OFF )
         - SET( DRAFTSMAN_TINYXML2_DEBUG_BIN_PATH      "default" )
         - SET( DRAFTSMAN_TINYXML2_RELEASE_BIN_PATH    "default" )
@@ -50,11 +54,13 @@ See "Cloning and Building tinyxml2" for a little bit of help on that part.
 GenerateProjectFiles.bat should be called each time you add or remove a file, or add a dependency, or change the paths to you tinyxml2 installation.
 
 ## Cloning and Building tinyxml2
-Here is a little script sample you can use to quickly clone and build
-    - git clone https://github.com/leethomason/tinyxml2
-    - mkdir build_tinyxml
-    - cd build_tinyxml
-    - cmake -G "Visual Studio 15 2017 Win64" -DBUILD_SHARED_LIBS=OFF ../tinyxml2
-    - cmake --build . --config Release
-    - cmake --build . --config Debug
-Once it's done, you should copy the relevant paths in your PRojectConfigOverrides.cmake file.
+####Windows:
+Here is a little script sample you can use to quickly clone and build ( do this outside of the repository anywhere on your disk )
+
+        - git clone https://github.com/leethomason/tinyxml2
+        - mkdir build_tinyxml
+        - cd build_tinyxml
+        - cmake -G "Visual Studio 15 2017 Win64" -DBUILD_SHARED_LIBS=OFF ../tinyxml2
+        - cmake --build . --config Release
+        - cmake --build . --config Debug
+Once it's done, you should copy the relevant paths in your ProjectConfigOverrides.cmake file.
