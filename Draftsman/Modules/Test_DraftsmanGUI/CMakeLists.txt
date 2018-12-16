@@ -13,6 +13,8 @@ add_executable( Test_DraftsmanGUI ${source_list} )
 
 target_link_libraries( Test_DraftsmanGUI DraftsmanGUI )
 
+set_target_properties( Test_DraftsmanGUI PROPERTIES CMAKE_AUTOMOC ON )
+
 target_include_directories(
     Test_DraftsmanGUI
     PUBLIC

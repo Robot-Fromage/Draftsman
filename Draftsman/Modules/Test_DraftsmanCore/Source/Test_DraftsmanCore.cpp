@@ -38,10 +38,11 @@ int main()
     ::tinyxml2::XMLElement * pElement = xmlDoc.NewElement("IntValue");
     pElement->SetText(10);
     pRoot->InsertEndChild(pElement);
-    ::DC::Config::test_uuid( 16 );
 
     while(true)
     {
+        std::cout << ::DC::Config::test_uuid( 16 );
+        std::cout << std::endl;
     }
 
     return  0;

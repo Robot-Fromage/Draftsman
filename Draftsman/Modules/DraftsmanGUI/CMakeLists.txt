@@ -13,6 +13,8 @@ add_library( DraftsmanGUI ${source_list} )
 
 target_link_libraries( DraftsmanGUI DraftsmanCore )
 
+set_target_properties( DraftsmanGUI PROPERTIES CMAKE_AUTOMOC ON )
+
 find_package(
     Qt5
     REQUIRED COMPONENTS

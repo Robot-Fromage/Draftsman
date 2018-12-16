@@ -39,7 +39,7 @@ if( ${DRAFTSMAN_USE_CONFIG} )
 endif()
 
 set (CMAKE_PREFIX_PATH ${DRAFTSMAN_QT_CMAKE_PATH})
-set (CMAKE_AUTOMOC ON)
+#set (CMAKE_AUTOMOC ON)
 
 # Add projects
 include(${CMAKE_CURRENT_SOURCE_DIR}/DraftsmanCore/CMakeLists.txt) # Depends on tinyxml
