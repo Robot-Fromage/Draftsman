@@ -26,7 +26,7 @@ https://visualstudio.microsoft.com/fr/downloads/
 
 ## Setup instructions:
 
-####Windows:
+#### Windows:
 ###### Clone:
         - git clone https://github.com/Robot-Fromage/DraftsmanCore
 
@@ -54,7 +54,8 @@ See "Cloning and Building tinyxml2" for a little bit of help on that part.
 GenerateProjectFiles.bat should be called each time you add or remove a file, or add a dependency, or change the paths to you tinyxml2 installation.
 
 ## Cloning and Building tinyxml2
-####Windows:
+
+#### Windows:
 Here is a little script sample you can use to quickly clone and build ( do this outside of the repository anywhere on your disk )
 
         - git clone https://github.com/leethomason/tinyxml2
