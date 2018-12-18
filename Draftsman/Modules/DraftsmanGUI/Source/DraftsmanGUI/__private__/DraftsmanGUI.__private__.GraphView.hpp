@@ -1,13 +1,14 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.__private__.GraphView.h
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.__private__.GraphView.hpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 18/12/2018
+ * @brief Definition of DraftsmanGUI GraphView private class
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
 #pragma once
 
@@ -15,7 +16,7 @@
 #include <QGraphicsView>
 
 
-#include "__private__/Draftsman.GUI.__private__.ForwardQProperty.h"
+#include "__private__/DraftsmanGUI.__private__.ForwardQProperty.hpp"
 
 
 class  QScroller;
@@ -23,9 +24,8 @@ class  QTimer;
 class  QCursor;
 
 
-namespace  Draftsman {
-namespace  GUI {
-namespace  __private__ {
+namespace DraftsmanGUI {
+namespace __private__ {
 
 
 class GraphView : public QGraphicsView
@@ -121,6 +121,5 @@ private:
 };
 
 
-} // namespace  __private__
-} // namespace  GUI
-} // namespace  Draftsman
+} // namespace __private__
+} // namespace DraftsmanGUI

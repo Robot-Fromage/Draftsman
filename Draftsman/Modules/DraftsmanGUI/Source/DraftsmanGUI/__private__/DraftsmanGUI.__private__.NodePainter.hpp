@@ -1,13 +1,14 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.__private__.NodePainter.h
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.__private__.NodePainter.hpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 18/12/2018
+ * @brief Definition of DraftsmanGUI NodePainter private class
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
 #pragma once
 
@@ -23,12 +24,11 @@ class QImage;
 #include <QMargins>
 
 
-namespace Draftsman { namespace GUI { class Node; } }
+namespace DraftsmanGUI { class Node; }
 
 
-namespace  Draftsman {
-namespace  GUI {
-namespace  __private__ {
+namespace DraftsmanGUI {
+namespace __private__ {
 
 
 class NodePainter
@@ -46,7 +46,7 @@ public:
 
 public:
     // Paint Functions
-    void  paint( ::Draftsman::GUI::Node* iNode, QPainter* iPainter );
+    void  paint( ::DraftsmanGUI::Node* iNode, QPainter* iPainter );
 
 public:
     // Getters / Setters
@@ -96,6 +96,5 @@ private:
 };
 
 
-} // namespace  __private__
-} // namespace  GUI
-} // namespace  Draftsman
+} // namespace __private__
+} // namespace DraftsmanGUI

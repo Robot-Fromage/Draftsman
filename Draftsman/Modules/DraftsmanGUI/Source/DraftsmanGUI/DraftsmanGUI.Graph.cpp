@@ -1,34 +1,33 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.Graph.cpp
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.Graph.cpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 16/12/2018
+ * @brief Implementation of DraftsmanGUI Graph class
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
-#include "Draftsman.GUI.Graph.h"
-
-
-#include "DraftsmanCoreGraph"
-#include "__private__/Draftsman.GUI.__private__.GraphScene.h"
-#include "__private__/Draftsman.GUI.__private__.GraphView.h"
-#include "Draftsman.GUI.Config.h"
+#include "DraftsmanGUI/DraftsmanGUI.Graph.hpp"
 
 
-//TMP:
-#include "Draftsman.GUI.Node.h"
+#include "DraftsmanGUI/DraftsmanGUI.Config.hpp"
+#include "DraftsmanGUI/DraftsmanGUI.Node.hpp"
+#include "__private__/DraftsmanGUI.__private__.GraphScene.hpp"
+#include "__private__/DraftsmanGUI.__private__.GraphView.hpp"
 
 
-#ifdef DRAFTSMAN_GUI_GRAPH_WITH_QOPENGLWIDGET
+#include <DCGraph>
+
+
+#ifdef DRAFTSMANGUI_GRAPH_WITH_QOPENGLWIDGET
 #include <QOpenGLWidget>
 #endif
 
 
-namespace  Draftsman {
-namespace  GUI {
+namespace DraftsmanGUI {
 
 
 //--------------------------------------------------------------------------------------
@@ -72,9 +71,9 @@ Graph::resizeEvent( QResizeEvent* event )
 void
 Graph::Init()
 {
-    mGraph  = new ::Draftsman::Core::Graph();
-    mView   = new ::Draftsman::GUI::__private__::GraphView();
-    mScene  = new ::Draftsman::GUI::__private__::GraphScene();
+    mGraph  = new ::DC::Graph();
+    mView   = new ::DraftsmanGUI::__private__::GraphView();
+    mScene  = new ::DraftsmanGUI::__private__::GraphScene();
 }
 
 
@@ -83,7 +82,7 @@ Graph::Build()
 {
     setObjectName( "Draftsman_GUI_Graph" );
 
-#ifdef DRAFTSMAN_GUI_GRAPH_WITH_QOPENGLWIDGET
+#ifdef DRAFTSMANGUI_GRAPH_WITH_QOPENGLWIDGET
     mView->update();
     QOpenGLWidget* gl = new QOpenGLWidget;
     QSurfaceFormat fmt;
@@ -102,8 +101,8 @@ Graph::Build()
     mView->setScene( mScene );
     mView->InitScroller();
 
-    // TMP LEAK
-    auto testnode = new ::Draftsman::GUI::Node();
+    // TMP LEAK NODE
+    auto testnode = new ::DraftsmanGUI::Node();
     testnode->setPos( mView->sceneRect().center() );
     mScene->addItem( testnode );
 }
@@ -127,6 +126,4 @@ Graph::Destroy()
 }
 
 
-} // namespace  GUI
-} // namespace  Draftsman
-
+} // namespace  DraftsmanGUI

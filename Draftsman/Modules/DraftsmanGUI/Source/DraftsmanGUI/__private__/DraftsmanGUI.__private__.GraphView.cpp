@@ -1,18 +1,19 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.__private__.GraphView.cpp
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.__private__.GraphView.hpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 18/12/2018
+ * @brief Implementation of DraftsmanGUI GraphView private class
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
-#include "__private__/Draftsman.GUI.__private__.GraphView.h"
+#include "__private__/DraftsmanGUI.__private__.GraphView.hpp"
 
 
-#include "Draftsman.GUI.Config.h"
+#include "DraftsmanGUI/DraftsmanGUI.Config.hpp"
 
 
 #include <QGuiApplication>
@@ -42,9 +43,8 @@
 //#define SCALE_GRID
 
 
-namespace  Draftsman {
-namespace  GUI {
-namespace  __private__ {
+namespace DraftsmanGUI {
+namespace __private__ {
 
 
 //--------------------------------------------------------------------------------------
@@ -553,7 +553,7 @@ GraphView::Init()
 {
     mTimer = new QTimer( this );
 
-    QString respath = QString::fromStdString( ::Draftsman::GUI::Config::GetResourcePath() );
+    QString respath = QString::fromStdString( ::DraftsmanGUI::Config::GetResourcePath() );
     mLensCursor = new QCursor( QPixmap( respath + "media/img/cursors/lens.png" ), 6, 6 );
 
     mVignette_TopLeft   = new QImage( respath + "media/img/graph/vignette/top_left.png" );
@@ -635,7 +635,5 @@ GraphView::InitScroller()
 }
 
 
-} // namespace  __private__
-} // namespace  GUI
-} // namespace  Draftsman
-
+} // namespace __private__
+} // namespace DraftsmanGUI

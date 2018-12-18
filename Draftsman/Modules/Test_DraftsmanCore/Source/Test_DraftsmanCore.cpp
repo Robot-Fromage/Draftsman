@@ -24,9 +24,6 @@
 #include <DCNode>
 
 
-namespace DC = ::DraftsmanCore;
-
-
 #ifdef TEST_DRAFTSMANCORE
 
 

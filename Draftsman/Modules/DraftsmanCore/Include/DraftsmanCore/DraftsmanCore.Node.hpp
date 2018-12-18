@@ -13,6 +13,9 @@
 #pragma once
 
 
+#include <DCTypes>
+
+
 #include <string>
 
 
@@ -25,7 +28,7 @@ class Node
 
 public:
     // Construction / Destruction
-    virtual  ~Node() = 0;
+    virtual  ~Node();
     Node();
 
 public:

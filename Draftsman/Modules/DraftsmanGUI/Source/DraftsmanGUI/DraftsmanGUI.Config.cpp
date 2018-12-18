@@ -1,26 +1,26 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.Config.cpp
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.Config.cpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 16/12/2018
+ * @brief Implementation of DraftsmanGUI Config module
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
-#include "Draftsman.GUI.Config.h"
-
-
-#include "__private__/Draftsman.GUI.__private__.Config.h"
+#include "DraftsmanGUI/DraftsmanGUI.Config.hpp"
 
 
-#include <DraftsmanCoreConfig>
+#include "__private__/DraftsmanGUI.__private__.Config.hpp"
 
 
-namespace  Draftsman {
-namespace  GUI {
-namespace  Config {
+#include <DCConfig>
+
+
+namespace DraftsmanGUI {
+namespace Config {
 
 
 //--------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ gui_version_number()
 const  int
 core_version_number()
 {
-    return  ::Draftsman::Core::Config::version_number();
+    return  ::DC::Config::version_number();
 }
 
 
@@ -52,28 +52,23 @@ with_opengl_context()
 }
 
 
-//--------------------------------------------------------------------------------------
-//---------------------------------------------------------------- Private Tampon Config
-
-
-// Get
 const  std::string&
 GetResourcePath()
 {
-    return  ::Draftsman::GUI::__private__::Config::Get()->GetResourcePath();
+    return  ::DraftsmanGUI::__private__::Config::Get()->GetResourcePath();
 }
 
 const  std::string&
 GetStyleDirRelativePath()
 {
-    return  ::Draftsman::GUI::__private__::Config::Get()->GetStyleDirRelativePath();
+    return  ::DraftsmanGUI::__private__::Config::Get()->GetStyleDirRelativePath();
 }
 
 
 const  std::string&
 GetStyleFileName()
 {
-    return  ::Draftsman::GUI::__private__::Config::Get()->GetStyleFileName();
+    return  ::DraftsmanGUI::__private__::Config::Get()->GetStyleFileName();
 }
 
 
@@ -84,29 +79,26 @@ GetStyleFilePath()
 }
 
 
-// Set
 void
 SetResourcePath( const  std::string&  iStr )
 {
-    ::Draftsman::GUI::__private__::Config::Get()->SetResourcePath( iStr );
+    ::DraftsmanGUI::__private__::Config::Get()->SetResourcePath( iStr );
 }
 
 
 void
 SetStyleDirRelativePath( const  std::string&  iStr )
 {
-    ::Draftsman::GUI::__private__::Config::Get()->SetStyleDirRelativePath( iStr );
+    ::DraftsmanGUI::__private__::Config::Get()->SetStyleDirRelativePath( iStr );
 }
 
 
 void
 SetStyleFileName( const  std::string&  iStr )
 {
-    ::Draftsman::GUI::__private__::Config::Get()->SetStyleFileName( iStr );
+    ::DraftsmanGUI::__private__::Config::Get()->SetStyleFileName( iStr );
 }
 
 
-} // namespace  Config
-} // namespace  GUI
-} // namespace  Draftsman
-
+} // namespace Config
+} // namespace DraftsmanGUI

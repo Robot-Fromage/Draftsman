@@ -1,23 +1,23 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.__private__.GraphScene.cpp
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.__private__.GraphScene.hpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 18/12/2018
+ * @brief Implementation of DraftsmanGUI GraphScene private class
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
-#include "__private__/Draftsman.GUI.__private__.GraphScene.h"
+#include "__private__/DraftsmanGUI.__private__.GraphScene.hpp"
 
 
 #include <QPainter>
 
 
-namespace  Draftsman {
-namespace  GUI {
-namespace  __private__ {
+namespace DraftsmanGUI {
+namespace __private__ {
 
 
 //--------------------------------------------------------------------------------------
@@ -36,7 +36,5 @@ GraphScene::GraphScene( QObject* iParent ) :
 }
 
 
-} // namespace  __private__
-} // namespace  GUI
-} // namespace  Draftsman
-
+} // namespace __private__
+} // namespace DraftsmanGUI

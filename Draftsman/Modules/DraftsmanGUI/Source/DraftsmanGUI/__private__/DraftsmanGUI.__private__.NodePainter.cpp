@@ -1,15 +1,16 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.__private__.NodePainter.cpp
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.__private__.NodePainter.hpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 18/12/2018
+ * @brief Implementation  of DraftsmanGUI NodePainter private class
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
-#include "__private__/Draftsman.GUI.__private__.NodePainter.h"
+#include "__private__/DraftsmanGUI.__private__.NodePainter.hpp"
 
 
 #include <QPainter>
@@ -17,8 +18,8 @@
 #include <QApplication>
 
 
-#include "Draftsman.GUI.Config.h"
-#include "Draftsman.GUI.Node.h"
+#include "DraftsmanGUI/DraftsmanGUI.Config.hpp"
+#include "DraftsmanGUI/DraftsmanGUI.Node.hpp"
 
 
 #define  DEFAULT_DROPSHADOW_ACTUAL_TILESIZE     30
@@ -41,9 +42,8 @@
 #define  DEFAULT_NODE_MIN_HEIGHT                40
 
 
-namespace  Draftsman {
-namespace  GUI {
-namespace  __private__ {
+namespace DraftsmanGUI {
+namespace __private__ {
 
 
 //--------------------------------------------------------------------------------------
@@ -107,7 +107,7 @@ NodePainter::Get()
 
 
 void
-NodePainter::paint( ::Draftsman::GUI::Node* iNode, QPainter* iPainter )
+NodePainter::paint( ::DraftsmanGUI::Node* iNode, QPainter* iPainter )
 {
     QSizeF s = iNode->boundingRect().size();
     int w = s.width();
@@ -282,7 +282,7 @@ NodePainter::GetDropShadowMargins()
 void
 NodePainter::InitInternalResources()
 {
-    QString respath = QString::fromStdString( ::Draftsman::GUI::Config::GetResourcePath() );
+    QString respath = QString::fromStdString( ::DraftsmanGUI::Config::GetResourcePath() );
     mDropShadow_TopLeft     = new QImage( respath + "media/img/graph/node/dropshadow/top_left.png" );
     mDropShadow_Top         = new QImage( respath + "media/img/graph/node/dropshadow/top.png" );
     mDropShadow_TopRight    = new QImage( respath + "media/img/graph/node/dropshadow/top_right.png" );
@@ -324,7 +324,5 @@ NodePainter::RecomputeNodeMetrics()
 }
 
 
-} // namespace  __private__
-} // namespace  GUI
-} // namespace  Draftsman
-
+} // namespace __private__
+} // namespace DraftsmanGUI

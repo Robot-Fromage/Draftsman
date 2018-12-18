@@ -1,13 +1,14 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.__private__.Config.h
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.__private__.Config.hpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 18/12/2018
+ * @brief Definition of DraftsmanGUI Config private module
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
 #pragma once
 
@@ -15,9 +16,8 @@
 #include <string>
 
 
-namespace  Draftsman {
-namespace  GUI {
-namespace  __private__ {
+namespace DraftsmanGUI {
+namespace __private__ {
 
 
 class Config
@@ -53,6 +53,5 @@ private:
 };
 
 
-} // namespace  __private__
-} // namespace  GUI
-} // namespace  Draftsman
+} // namespace __private__
+} // namespace DraftsmanGUI

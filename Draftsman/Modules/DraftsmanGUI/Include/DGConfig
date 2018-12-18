@@ -1,1 +1,1 @@
-#include "DraftsmanGUI/DraftsmanGUI.Config.h"
+#include "DraftsmanGUI/DraftsmanGUI.Config.hpp"

@@ -17,8 +17,8 @@
 #include "DraftsmanCore.__private__.GenerateUUID.hpp"
 
 
-namespace  DraftsmanCore {
-namespace  Config {
+namespace DraftsmanCore {
+namespace Config {
 
 
 //--------------------------------------------------------------------------------------
@@ -55,5 +55,5 @@ SetResourcePath( const  std::string&  iStr )
 }
 
 
-} // namespace  Config
-} // namespace  DraftsmanCore
+} // namespace Config
+} // namespace DraftsmanCore

@@ -1,26 +1,22 @@
-/*************************************************************************
-*
-*   Draftsman
-*__________________
-*
-* Draftsman.GUI.Node.cpp
-*
-* Clement Berthaud
-* Please refer to LICENSE.TXT
-*/
+/***************************************************************************************
+ *
+ *   DraftsmanGUI
+ *__________________
+ *
+ * @file DraftsmanGUI.Node.hpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 16/12/2018
+ * @brief Implementation of DraftsmanGUI Node class
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
 
-#include "Draftsman.GUI.Node.h"
-
-
-#ifdef DRAFTSMAN_GUI_NODE_WITH_QGRAPHICSDROPSHADOWEFFECT
-#include <QGraphicsDropShadowEffect>
-#endif
+#include "DraftsmanGUI/DraftsmanGUI.Node.hpp"
 
 
-#include "DraftsmanCoreNode"
+#include "__private__/DraftsmanGUI.__private__.NodePainter.hpp"
 
 
-#include "__private__/Draftsman.GUI.__private__.NodePainter.h"
+#include <DCNode>
 
 
 #define  DEFAULT_WIDTH      100.f
@@ -28,8 +24,7 @@
 #define  DEFAULT_SIZE       QSizeF( DEFAULT_WIDTH, DEFAULT_HEIGHT )
 
 
-namespace  Draftsman {
-namespace  GUI {
+namespace  DraftsmanGUI {
 
 
 //--------------------------------------------------------------------------------------
@@ -46,23 +41,15 @@ Node::Node( tSuperClass* iParent ) :
     mNode( NULL ),
     mSize( DEFAULT_SIZE )
 {
-#ifdef DRAFTSMAN_GUI_NODE_WITH_QGRAPHICSDROPSHADOWEFFECT
-    mEffect = new QGraphicsDropShadowEffect();
-    mEffect->setBlurRadius( 10 );
-    mEffect->setOffset( 5, 5 );
-    mEffect->setColor( QColor( 0, 0, 0, 160 ) );
-    setGraphicsEffect( mEffect );
-#endif
+    mNode = new  ::DC::Node();
+    int ch  = ::DraftsmanGUI::__private__::NodePainter::Get()->GetCaptionHeight();
+    int uh  = ::DraftsmanGUI::__private__::NodePainter::Get()->GetTextMetricsHeight();
+    int pv  = ::DraftsmanGUI::__private__::NodePainter::Get()->GetPadding();
+    int bh  = ::DraftsmanGUI::__private__::NodePainter::Get()->GetMinBodyHeight();
+    int mw  = ::DraftsmanGUI::__private__::NodePainter::Get()->GetTextMetricsWidth( UUID() );
 
-    mNode = new  ::Draftsman::Core::Node();
-    int ch  = ::Draftsman::GUI::__private__::NodePainter::Get()->GetCaptionHeight();
-    int uh  = ::Draftsman::GUI::__private__::NodePainter::Get()->GetTextMetricsHeight();
-    int p   = ::Draftsman::GUI::__private__::NodePainter::Get()->GetPadding();
-    int bh  = ::Draftsman::GUI::__private__::NodePainter::Get()->GetMinBodyHeight();
-    int imw = ::Draftsman::GUI::__private__::NodePainter::Get()->GetTextMetricsWidth( UUID() );
-
-    int w = imw + p * 2;
-    int h = ch + uh + bh + p * 2;
+    int w = mw + pv * 2;
+    int h = ch + uh + bh + pv * 2;
     mSize = QSize( w, h );
 }
 
@@ -74,7 +61,7 @@ Node::Node( tSuperClass* iParent ) :
 QRectF
 Node::boundingRect() const
 {
-    const  QMargins&  m = ::Draftsman::GUI::__private__::NodePainter::Get()->GetDropShadowMargins();
+    const  QMargins&  m = ::DraftsmanGUI::__private__::NodePainter::Get()->GetDropShadowMargins();
     auto rectsize = mSize + QSize( m.left() + m.right(), m.top() + m.bottom() );
     return  QRectF( QPointF(), rectsize );
 }
@@ -83,7 +70,7 @@ Node::boundingRect() const
 void
 Node::paint( QPainter* painter, const  QStyleOptionGraphicsItem* option, QWidget* widget )
 {
-    ::Draftsman::GUI::__private__::NodePainter::Get()->paint( this, painter );
+    ::DraftsmanGUI::__private__::NodePainter::Get()->paint( this, painter );
 }
 
 
@@ -112,6 +99,4 @@ Node::UUID()
 }
 
 
-} // namespace  GUI
-} // namespace  Draftsman
-
+} // namespace DraftsmanGUI
