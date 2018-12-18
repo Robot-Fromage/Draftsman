@@ -1,20 +1,32 @@
+/***************************************************************************************
+ *
+ *   Test_DraftsmanGUI
+ *__________________
+ *
+ * @file Test_DraftsmanGUI.cpp
+ * @author Clement BERTHAUD <code@clementberthaud.com>
+ * @date 16/12/2018
+ * @brief Implementation of DraftsmanGUI Test Executable
+ * @licence MIT License - Copyright (c) 2018-2019 Draftsman - Clement BERTHAUD <code@clementberthaud.com>
+ */
+
 #include "Test_DraftsmanGUI.hpp"
 
-#include "DraftsmanCore/DraftsmanCore.hpp"
-#include "DraftsmanGUI/DraftsmanGUI.hpp"
 
 #include "tinyxml2.h"
 
+
 #include <QApplication>
 #include <QWidget>
+
+
+#include <DGGraph>
+
 
 #ifdef TEST_DRAFTSMANGUI
 
 int main( int argc, char *argv[] )
 {
-    ::DraftsmanCore::test();
-    ::DraftsmanGUI::test();
-
     ::tinyxml2::XMLDocument xmlDoc;
     ::tinyxml2::XMLNode * pRoot = xmlDoc.NewElement("Root");
     xmlDoc.InsertFirstChild(pRoot);
@@ -23,7 +35,7 @@ int main( int argc, char *argv[] )
     pRoot->InsertEndChild(pElement);
 
     QApplication app( argc, argv );
-    QWidget w;
+    ::DG::Graph w;
     w.show();
 
     int exit_code = app.exec();

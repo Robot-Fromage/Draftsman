@@ -19,9 +19,6 @@
 #include <QWidget>
 
 
-#include "__private__/DraftsmanGUI.__private__.ForwardQProperty.hpp"
-
-
 namespace DraftsmanCore { class Graph; }
 namespace DraftsmanGUI { namespace __private__ { class GraphView; } }
 namespace DraftsmanGUI { namespace __private__ { class GraphScene; } }
