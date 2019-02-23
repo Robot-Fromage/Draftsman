@@ -61,7 +61,9 @@ GraphView::GraphView( QWidget* iParent ) :
     tSuperClass( iParent ),
     mBackgroundColor(   DEFAULT_BACKGROUND_COLOR ),
     mGridColor(         DEFAULT_GRID_COLOR ),
+    mSubGridColor(      DEFAULT_SUBGRID_COLOR ),
     mGridSize(          DEFAULT_GRID_SIZE ),
+    mSubGridCount(      DEFAULT_SUBGRID_COUNT ),
 
     mScroller(                  NULL ),
     mTimer(                     NULL ),
