@@ -51,10 +51,12 @@ https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioT
 
 ###### Configuration:
 After launching Setup.bat, you will see two files appearing at the root of the repository:
+
         - VisualStudioProjectConfig.cmake
         - MinGWMakefefilesConfig.cmake
 
 These files are used to override configuration according to the appropriate generator and compiler, if it's VisualStudio ( MSVC ) or MinGW ( GCC ).
+
         - SET( DRAFTSMAN_TINYXML2_USE_SHARED          OFF )
         - SET( DRAFTSMAN_TINYXML2_DEBUG_BIN_PATH      "default" )
         - SET( DRAFTSMAN_TINYXML2_RELEASE_BIN_PATH    "default" )
@@ -65,6 +67,7 @@ These files are used to override configuration according to the appropriate gene
         - SET( DRAFTSMAN_BUILD_SHARED_GUI             OFF )
         - SET( DRAFTSMAN_BUILD_TESTS                  ON )
         - SET( DRAFTSMAN_QT_CMAKE_PATH                "default" )
+
 Override those values for your need, specifying where to find tinyxml2 and the build options.
 The paths should be ABSOLUTE paths and point to the needed tinyxml directories.
 See "Cloning and Building tinyxml2" for a little bit of help on that part.
@@ -73,18 +76,25 @@ You can set separate configuration for different generators like so. Don't forge
 ###### Generate VisualStudio Project:
         - call Generate_VisualStudio_Project.bat
 Generate_VisualStudio_Project.bat should be called each time you add or remove a file, or add a dependency, or change the paths to you tinyxml2 installation.
+
 After the generation is done, you should see the generated project files under Draftsman/Generated_VisualStudio/
+
 Nothing is compiled yet but you can call cmake --build . or launch the solution and build.
 The binaries will be created under Draftsman/Generated_VisualStudio/Debug and Draftsman/Generated_VisualStudio/Release
+
 Don't forget to copy the relevant dlls there to ensure the prorams finds the dependencies to QtCore, QtGUI, QtWidget, ...
+
 You should see a symbolic link to Draftsman.sln appear at the root of the repository, if it doesn't appear check that you ran the script with admin rights.
 
 ###### Generate MinGW Makefiles:
         - call Generate_MinGW_Makefiles.bat
 Generate_MinGW_Makefiles.bat should be called each time you add or remove a file, or add a dependency, or change the paths to you tinyxml2 installation.
+
 After the generation is done, you should see the generated make files under Draftsman/Generated_MinGW/Debug/ and Draftsman/Generated_MinGW/Release/
+
 Nothing is compiled yet but you can call cmake --build . in one of these repositories.
 The binaries will be created under Draftsman/Generated_MinGW/Debug/ and Draftsman/Generated_MinGW/Release/
+
 Don't forget to copy the relevant dlls there to ensure the prorams finds the dependencies to QtCore, QtGUI, QtWidget, ... 
 
 ## Cloning and Building tinyxml2
@@ -101,6 +111,7 @@ Here are some little script samples you can use to quickly clone and build ( do 
 Once it's done, you should copy the relevant paths in your Generate_VisualStudio_Project.cmake file.
 
 Example:
+
         - SET( DRAFTSMAN_TINYXML2_USE_SHARED          OFF )
         - SET( DRAFTSMAN_TINYXML2_DEBUG_BIN_PATH      "W:/work/DraftsmanSystems/build_tinyxml_MSVC/Debug/tinyxml2d.dll" )
         - SET( DRAFTSMAN_TINYXML2_RELEASE_BIN_PATH    "W:/work/DraftsmanSystems/build_tinyxml_MSVC/Release/tinyxml2.dll" )
@@ -114,6 +125,7 @@ Example:
 
 ###### MinGW
 MinGW does not generate a multi configuration project file, but it generates a set of make files per configuration, hence the process is a little more complex.
+
         - mkdir build_tinyxml_MinGW
         - cd build_tinyxml_MinGW
         - mkdir Release
@@ -130,6 +142,7 @@ MinGW does not generate a multi configuration project file, but it generates a s
 Once it's done, you should copy the relevant paths in your Generate_VisualStudio_Project.cmake file.
 
 Example:
+
         - SET( DRAFTSMAN_TINYXML2_USE_SHARED          OFF )
         - SET( DRAFTSMAN_TINYXML2_DEBUG_BIN_PATH      "W:/work/DraftsmanSystems/build_tinyxml_MinGW/Debug/libtinyxml2d.dll" )
         - SET( DRAFTSMAN_TINYXML2_RELEASE_BIN_PATH    "W:/work/DraftsmanSystems/build_tinyxml_MinGW/Release/libtinyxml2.dll" )
