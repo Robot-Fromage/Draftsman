@@ -16,7 +16,7 @@ SET( DRAFTSMAN_QT_CMAKE_PATH                "unset"     CACHE STRING    "Indicat
 # Generate only Debug and Release configurations for all projects
 set( CMAKE_CONFIGURATION_TYPES Debug Release CACHE TYPE INTERNAL FORCE )
 # Generate only x64 configurations for all projects
-set( CMAKE_GENERATOR_PLATFORM x64 )
+#set( CMAKE_GENERATOR_PLATFORM x64 )
 # Get rid of cmake's ZERO_CHECK for solution
 set( CMAKE_SUPPRESS_REGENERATION true )
 # Set Debug postfix for all projects
