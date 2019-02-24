@@ -42,7 +42,7 @@ project( Draftsman CXX )
 # Read Preferences if needed
 if( ${DRAFTSMAN_USE_CONFIG} )
     # Read Default Preferences
-    include(${CMAKE_CURRENT_SOURCE_DIR}/../Config/DefaultConfig.cmake)
+    include(${CMAKE_CURRENT_SOURCE_DIR}/../Tools/DefaultConfig.cmake)
     # Read Preferences Overrides if set
     # For VisualStudio
     if( ${IS_VISUALSTUDIO_PROJECT} )
