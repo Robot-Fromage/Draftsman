@@ -1,7 +1,7 @@
-# DraftsmanCore
+# Draftsman
 ![alt text](http://clementberthaud.com/dev/dep/Draftsman/media/com/draftsman_100.png "Draftsman")
 
-Core Implementation for Draftsman Modular Nodal Pipeline C++ Library.
+Draftsman C++ Modular Nodal Pipeline Library.
 
 ###### Dependencies:
         - Qt5.10 or greater prebuilt binaries for MinGW or MSVC
