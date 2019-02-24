@@ -13,13 +13,9 @@
 #include "DraftsmanCore.__private__.GenerateUUID.hpp"
 
 
-#include <vector>
 #include <iostream>
 #include <sstream>
 #include <random>
-#include <climits>
-#include <algorithm>
-#include <functional>
 
 
 namespace DraftsmanCore {
@@ -42,10 +38,7 @@ std::string generate_hex( const  unsigned  int  len );
 
 
 unsigned char random_char() {
-    std::random_device rd;
-    std::mt19937 gen( rd() );
-    std::uniform_int_distribution<> dis( 0, 255 );
-    return  static_cast< unsigned  char >( dis( gen ) );
+    return  static_cast< unsigned  char >( rand()%256 );
 }
 
 std::string generate_hex( const  unsigned  int  len ) {

@@ -14,6 +14,7 @@
 
 
 #include <iostream>
+#include <ctime>
 
 
 #include <tinyxml2.h>
@@ -29,6 +30,8 @@
 
 int main()
 {
+    srand(time(0));
+
     ::tinyxml2::XMLDocument xmlDoc;
     ::tinyxml2::XMLNode * pRoot = xmlDoc.NewElement("Root");
     xmlDoc.InsertFirstChild(pRoot);
