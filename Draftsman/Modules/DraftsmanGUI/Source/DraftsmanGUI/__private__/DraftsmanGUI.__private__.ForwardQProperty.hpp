@@ -16,6 +16,6 @@
 
 #define FORWARD_QPROPERTY( iType, iName )                        \
     iType m##iName;                                                     \
-    public: const  iType##& get##iName() { return m##iName; }           \
-    public: void set##iName( const  iType##& iIn ) { m##iName = iIn; }  \
+    public: const  iType  & get##iName() { return m##iName; }           \
+    public: void set##iName( const  iType  & iIn ) { m##iName = iIn; }  \
     private:

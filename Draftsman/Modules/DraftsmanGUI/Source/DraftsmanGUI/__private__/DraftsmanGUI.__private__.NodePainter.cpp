@@ -94,7 +94,7 @@ NodePainter::NodePainter() :
 NodePainter*
 NodePainter::Get()
 {
-    static  NodePainter*  sNodePainter = __nullptr;
+    static  NodePainter*  sNodePainter = nullptr;
     if( !sNodePainter )
         sNodePainter = new NodePainter();
 

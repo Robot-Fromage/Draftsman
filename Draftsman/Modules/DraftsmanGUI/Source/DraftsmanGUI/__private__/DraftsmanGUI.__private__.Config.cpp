@@ -47,7 +47,7 @@ Config::Config() :
 Config*
 Config::Get()
 {
-    static  Config*  sConfig = __nullptr;
+    static  Config*  sConfig = nullptr;
     if( !sConfig )
         sConfig = new Config();
 

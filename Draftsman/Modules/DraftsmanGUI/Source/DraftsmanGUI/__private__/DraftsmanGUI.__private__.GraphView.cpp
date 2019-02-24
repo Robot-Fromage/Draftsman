@@ -30,6 +30,9 @@
 #include <QTransform>
 
 
+#include <cmath>
+
+
 #define DEFAULT_BACKGROUND_COLOR    QColor( 127, 127, 127 )
 #define DEFAULT_GRID_COLOR          QColor( 60, 60, 60 )
 #define DEFAULT_SUBGRID_COLOR       QColor( 80, 80, 80 )
