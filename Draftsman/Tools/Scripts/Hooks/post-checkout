@@ -3,8 +3,7 @@ import sys, os
 
 sysplatform = sys.platform
 if sysplatform == "win32":
-    #os.system( 'call "Draftsman/Tools/Scripts/Windows/ProjectDependencies.bat" -d' )
-    print( "Hooks not implemented yet" )
+    os.system( 'call "Draftsman/Tools/Scripts/Windows/ProjectDependencies.bat" -d' )
 elif sysplatform == "darwin":
     print( "error" )
 elif sysplatform == "linux":

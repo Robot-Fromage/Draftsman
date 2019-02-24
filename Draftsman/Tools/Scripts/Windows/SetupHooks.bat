@@ -1,1 +1,1 @@
-git config core.hooksPath DraftsmanCore/Tools/Submodules/ProjectHooks/
+git config core.hooksPath Draftsman/Tools/Scripts/Hooks/
