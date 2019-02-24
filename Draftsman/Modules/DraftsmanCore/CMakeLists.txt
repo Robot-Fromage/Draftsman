@@ -15,21 +15,21 @@ IF( ${DRAFTSMAN_TINYXML2_USE_SHARED} )
     target_link_libraries (
         DraftsmanCore
         PUBLIC
-        debug ${DRAFTSMAN_TINYXML2_DEBUG_BIN_PATH}tinyxml2d.dll
-        optimized ${DRAFTSMAN_TINYXML2_RELEASE_BIN_PATH}tinyxml2.dll
+        debug ${DRAFTSMAN_TINYXML2_DEBUG_BIN_PATH}
+        optimized ${DRAFTSMAN_TINYXML2_RELEASE_BIN_PATH}
     )
     target_link_libraries (
         DraftsmanCore
         PUBLIC
-        debug ${DRAFTSMAN_TINYXML2_DEBUG_LIB_PATH}tinyxml2d.lib
-        optimized ${DRAFTSMAN_TINYXML2_RELEASE_LIB_PATH}tinyxml2.lib
+        debug ${DRAFTSMAN_TINYXML2_DEBUG_LIB_PATH}
+        optimized ${DRAFTSMAN_TINYXML2_RELEASE_LIB_PATH}
     )
 ELSE()
     target_link_libraries (
         DraftsmanCore
         PUBLIC
-        debug ${DRAFTSMAN_TINYXML2_DEBUG_LIB_PATH}tinyxml2d.lib
-        optimized ${DRAFTSMAN_TINYXML2_RELEASE_LIB_PATH}tinyxml2.lib
+        debug ${DRAFTSMAN_TINYXML2_DEBUG_LIB_PATH}
+        optimized ${DRAFTSMAN_TINYXML2_RELEASE_LIB_PATH}
     )
 ENDIF()
 

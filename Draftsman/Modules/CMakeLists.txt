@@ -13,6 +13,17 @@ SET( DRAFTSMAN_BUILD_SHARED_GUI             OFF         CACHE BOOL      "Sets if
 SET( DRAFTSMAN_BUILD_TESTS                  ON          CACHE BOOL      "Sets if we build the library shared or static" )
 SET( DRAFTSMAN_QT_CMAKE_PATH                "unset"     CACHE STRING    "Indicates the path to Qt cmake package" )
 
+SET( IS_VISUALSTUDIO_PROJECT                OFF )
+SET( IS_MINGW_MAKEFILES                     OFF )
+
+if( ${CMAKE_GENERATOR} STREQUAL "Visual Studio 15 2017 Win64" )
+    SET( IS_VISUALSTUDIO_PROJECT            ON )
+endif()
+
+if( ${CMAKE_GENERATOR} STREQUAL "MinGW Makefiles" )
+    SET( IS_MINGW_MAKEFILES                 ON )
+endif()
+
 # Generate only Debug and Release configurations for all projects
 set( CMAKE_CONFIGURATION_TYPES Debug Release CACHE TYPE INTERNAL FORCE )
 # Generate only x64 configurations for all projects
@@ -31,10 +42,19 @@ project( Draftsman CXX )
 # Read Preferences if needed
 if( ${DRAFTSMAN_USE_CONFIG} )
     # Read Default Preferences
-    include(${CMAKE_CURRENT_SOURCE_DIR}/../Config/DefaultProjectConfig.cmake)
+    include(${CMAKE_CURRENT_SOURCE_DIR}/../Config/DefaultConfig.cmake)
     # Read Preferences Overrides if set
-    if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../../ProjectConfigOverrides.cmake)
-        include(${CMAKE_CURRENT_SOURCE_DIR}/../../ProjectConfigOverrides.cmake)
+    # For VisualStudio
+    if( ${IS_VISUALSTUDIO_PROJECT} )
+        if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../../VisualStudioProjectConfig.cmake)
+            include(${CMAKE_CURRENT_SOURCE_DIR}/../../VisualStudioProjectConfig.cmake)
+        endif()
+    endif()
+    # For MinGW
+    if( ${IS_MINGW_MAKEFILES} )
+        if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../../MinGWMakefefilesConfig.cmake)
+            include(${CMAKE_CURRENT_SOURCE_DIR}/../../MinGWMakefefilesConfig.cmake)
+        endif()
     endif()
 endif()
 
