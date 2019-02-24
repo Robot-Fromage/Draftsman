@@ -22,3 +22,5 @@ __pycache__/
 
 # Project config files
 ProjectConfigOverrides.cmake
+VisualStudioProjectConfig.cmake
+MinGWMakefefilesConfig.cmake
