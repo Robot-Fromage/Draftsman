@@ -24,7 +24,7 @@ IF EXIST CMakeFiles ( rmdir /S /Q CMakeFiles )
 IF EXIST cmake_install.cmake ( del cmake_install.cmake )
 IF EXIST CMakeCache.txt ( del CMakeCache.txt )
 :: Rebuild Project
-cmake -G "MinGW Makefiles" -DDRAFTSMAN_USE_CONFIG:BOOL=ON -DCMAKE_BUILD_TYPE=Release ../../Modules
+cmake -G "MinGW Makefiles" -DDRAFTSMAN_USE_CONFIG:BOOL=ON -DCMAKE_BUILD_TYPE=Release ../../Source
 
 cd ..
 cd Debug
@@ -33,4 +33,4 @@ IF EXIST CMakeFiles ( rmdir /S /Q CMakeFiles )
 IF EXIST cmake_install.cmake ( del cmake_install.cmake )
 IF EXIST CMakeCache.txt ( del CMakeCache.txt )
 :: Rebuild Project
-cmake -G "MinGW Makefiles" -DDRAFTSMAN_USE_CONFIG:BOOL=ON -DCMAKE_BUILD_TYPE=Debug ../../Modules
+cmake -G "MinGW Makefiles" -DDRAFTSMAN_USE_CONFIG:BOOL=ON -DCMAKE_BUILD_TYPE=Debug ../../Source
